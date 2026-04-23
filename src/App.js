@@ -160,45 +160,45 @@ export default function App() {
   const VIEWS = ["dashboard","checklist","schedule","availability","supplies","staff","log"];
 
   return (
-    <div style={{ fontFamily: "'DM Mono', 'Courier New', monospace", background: "#0c0b09", minHeight: "100vh", color: "#ede5d5" }}>
+    <div style={{ fontFamily: "'DM Mono', 'Courier New', monospace", background: "#f8f7f5", minHeight: "100vh", color: "#1a1814" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Cormorant+Garamond:wght@600;700&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
         ::-webkit-scrollbar{width:3px}
-        ::-webkit-scrollbar-track{background:#141310}
-        ::-webkit-scrollbar-thumb{background:#333028;border-radius:2px}
+        ::-webkit-scrollbar-track{background:#f0ede8}
+        ::-webkit-scrollbar-thumb{background:#c8c4bc;border-radius:2px}
         button{cursor:pointer;border:none;font-family:inherit}
         input,select,textarea{font-family:inherit}
-        .nav{background:none;color:#4a4840;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:3px;transition:all .2s;border:1px solid transparent}
-        .nav:hover{color:#ede5d5;background:#181714}
-        .nav.on{color:#c9a96e;background:#181714;border-color:#2e2a22}
-        .card{background:#131210;border:1px solid #222018;border-radius:6px}
-        .inp{background:#181714;border:1px solid #2a2620;border-radius:4px;padding:7px 10px;color:#ede5d5;font-size:12px;outline:none;transition:border .2s;width:100%}
+        .nav{background:none;color:#6a6458;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:3px;transition:all .2s;border:1px solid transparent}
+        .nav:hover{color:#1a1814;background:#e8e4dc}
+        .nav.on{color:#a07840;background:#fdf8f0;border-color:#c9a96e}
+        .card{background:#ffffff;border:1px solid #ddd8cc;border-radius:6px}
+        .inp{background:#f8f7f5;border:1px solid #ccc8be;border-radius:4px;padding:7px 10px;color:#ede5d5;font-size:12px;outline:none;transition:border .2s;width:100%}
         .inp:focus{border-color:#c9a96e55}
-        .sel{background:#181714;border:1px solid #2a2620;border-radius:4px;padding:5px 7px;color:#ede5d5;font-size:11px;outline:none}
+        .sel{background:#f8f7f5;border:1px solid #ccc8be;border-radius:4px;padding:5px 7px;color:#ede5d5;font-size:11px;outline:none}
         .btn{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:3px;transition:all .15s;cursor:pointer}
-        .bg{background:#2a2216;color:#c9a96e;border:1px solid #3a3020}.bg:hover{background:#352a1a}
-        .bt{background:#162220;color:#7eb8b0;border:1px solid #1e3830}.bt:hover{background:#1e2e2a}
-        .bb{background:#161e28;color:#7e9bb8;border:1px solid #1e2e40}.bb:hover{background:#1e2a38}
-        .br{background:#28181a;color:#c07878;border:1px solid #3a2022}.br:hover{background:#32201e}
-        .row{padding:11px 16px;border-bottom:1px solid #1a1814;transition:background .15s}
+        .bg{background:#fdf3e3;color:#a07840;border:1px solid #c9a96e}.bg:hover{background:#352a1a}
+        .bt{background:#e8f5f4;color:#3a9890;border:1px solid #7eb8b0}.bt:hover{background:#1e2e2a}
+        .bb{background:#e8eef5;color:#3a6898;border:1px solid #7e9bb8}.bb:hover{background:#1e2a38}
+        .br{background:#fceaea;color:#c05858;border:1px solid #e07878}.br:hover{background:#32201e}
+        .row{padding:11px 16px;border-bottom:1px solid #e8e4dc;transition:background .15s}
         .row:last-child{border-bottom:none}
-        .row:hover{background:#161412}
+        .row:hover{background:#f8f5f0}
         .pulse{animation:pulse 1.8s ease-in-out infinite}
         @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
         .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;display:inline-block}
         .av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;flex-shrink:0}
-        .chk{width:18px;height:18px;border-radius:3px;border:1px solid #2e2c26;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .15s}
+        .chk{width:18px;height:18px;border-radius:3px;border:1px solid #ccc8be;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .15s}
         .chip{font-size:9px;padding:3px 9px;border-radius:3px;cursor:pointer;transition:all .15s;letter-spacing:.07em;border:1px solid transparent}
         .scell{width:28px;height:28px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .15s;flex-shrink:0}
-        .overlay{position:fixed;inset:0;background:#00000090;display:flex;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(2px)}
-        .modal{background:#161412;border:1px solid #2a2620;border-radius:8px;padding:26px;width:90%;max-width:420px}
+        .overlay{position:fixed;inset:0;background:#00000060;display:flex;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(2px)}
+        .modal{background:#ffffff;border:1px solid #ddd8cc;border-radius:8px;padding:26px;width:90%;max-width:420px}
       `}</style>
 
-      <div style={{ borderBottom: "1px solid #1e1c16", padding: "14px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+      <div style={{ borderBottom: "1px solid #e0dcd4", padding: "14px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
         <div>
           <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, color: "#c9a96e", letterSpacing: ".06em" }}>Suite Clean</div>
-          <div style={{ fontSize: 9, color: "#3a3830", letterSpacing: ".18em", textTransform: "uppercase", marginTop: 1 }}>Salon Suites · Operations Manager</div>
+          <div style={{ fontSize: 9, color: "#7a7468", letterSpacing: ".18em", textTransform: "uppercase", marginTop: 1 }}>Salon Suites · Operations Manager</div>
         </div>
         <div style={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
           {VIEWS.map((v) => <button key={v} className={`nav ${view === v ? "on" : ""}`} onClick={() => setView(v)}>{v}</button>)}
@@ -217,13 +217,13 @@ export default function App() {
                 { l: "Low Supplies", v: lowSupplies.length, c: lowSupplies.length ? "#c07878" : "#7eb8a0" },
               ].map(({ l, v, c }) => (
                 <div key={l} className="card" style={{ padding: "14px 18px" }}>
-                  <div style={{ fontSize: 9, color: "#4a4840", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 6 }}>{l}</div>
+                  <div style={{ fontSize: 9, color: "#6a6458", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 6 }}>{l}</div>
                   <div style={{ fontSize: 26, color: c, fontWeight: 500 }}>{v}</div>
                 </div>
               ))}
             </div>
             <div className="card" style={{ padding: "14px 20px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#4a4840", marginBottom: 8, letterSpacing: ".1em" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#6a6458", marginBottom: 8, letterSpacing: ".1em" }}>
                 <span>DAILY PROGRESS</span><span style={{ color: "#c9a96e" }}>{Math.round(doneTasks / tasks.length * 100)}%</span>
               </div>
               <div style={{ height: 4, background: "#222018", borderRadius: 2, overflow: "hidden" }}>
@@ -232,16 +232,16 @@ export default function App() {
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <div className="card" style={{ padding: "14px 18px" }}>
-                <div style={{ fontSize: 9, color: "#4a4840", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Active Tasks</div>
+                <div style={{ fontSize: 9, color: "#6a6458", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Active Tasks</div>
                 {activeTasks.length === 0
-                  ? <div style={{ fontSize: 11, color: "#2a2820", textAlign: "center", padding: "14px 0" }}>No active tasks</div>
+                  ? <div style={{ fontSize: 11, color: "#aaa49a", textAlign: "center", padding: "14px 0" }}>No active tasks</div>
                   : activeTasks.map(t => {
                     const a = staff.find(s => s.id === t.assigneeId);
                     return (
                       <div key={t.id} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                         <span className="dot pulse" style={{ background: "#c9a96e" }} />
                         <div style={{ flex: 1 }}>
-                          <div style={{ fontSize: 11, color: "#ddd" }}>{t.name}</div>
+                          <div style={{ fontSize: 11, color: "#1a1814" }}>{t.name}</div>
                           {a && <div style={{ fontSize: 9, color: a.color }}>{a.name}</div>}
                         </div>
                         <span style={{ fontSize: 12, color: "#c9a96e", fontWeight: 500 }}>{fmt(t.elapsed)}</span>
@@ -250,18 +250,18 @@ export default function App() {
                   })}
               </div>
               <div className="card" style={{ padding: "14px 18px" }}>
-                <div style={{ fontSize: 9, color: "#4a4840", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Today's Shifts</div>
+                <div style={{ fontSize: 9, color: "#6a6458", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Today's Shifts</div>
                 {(() => {
                   const ts = shifts[todayKey] || {};
                   const scheduled = staff.filter(s => ts[s.id] !== undefined);
                   return scheduled.length === 0
-                    ? <div style={{ fontSize: 11, color: "#2a2820", textAlign: "center", padding: "14px 0" }}>No shifts scheduled today</div>
+                    ? <div style={{ fontSize: 11, color: "#aaa49a", textAlign: "center", padding: "14px 0" }}>No shifts scheduled today</div>
                     : scheduled.map(s => (
                       <div key={s.id} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                         <div className="av" style={{ background: s.color + "33", color: s.color }}>{s.avatar}</div>
                         <div style={{ flex: 1 }}>
-                          <div style={{ fontSize: 11, color: "#ddd" }}>{s.name}</div>
-                          <div style={{ fontSize: 9, color: "#555" }}>{SHIFT_ICONS[ts[s.id]]} {SHIFTS[ts[s.id]]}</div>
+                          <div style={{ fontSize: 11, color: "#1a1814" }}>{s.name}</div>
+                          <div style={{ fontSize: 9, color: "#666" }}>{SHIFT_ICONS[ts[s.id]]} {SHIFTS[ts[s.id]]}</div>
                         </div>
                       </div>
                     ));
@@ -269,17 +269,17 @@ export default function App() {
               </div>
             </div>
             <div className="card" style={{ padding: "14px 18px" }}>
-              <div style={{ fontSize: 9, color: "#4a4840", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Tasks by Area</div>
+              <div style={{ fontSize: 9, color: "#6a6458", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 12 }}>Tasks by Area</div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px,1fr))", gap: 8 }}>
                 {Object.entries(AREA_COLORS).map(([area, color]) => {
                   const at = tasks.filter(t => t.area === area);
                   const dc = at.filter(t => t.status === "done").length;
                   return (
-                    <div key={area} style={{ background: "#181714", borderRadius: 4, padding: "10px 12px" }}>
+                    <div key={area} style={{ background: "#f0ede8", borderRadius: 4, padding: "10px 12px" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 6 }}>
                         <span className="dot" style={{ width: 6, height: 6, background: color }} />
-                        <span style={{ fontSize: 10, color: "#aaa" }}>{area}</span>
-                        <span style={{ marginLeft: "auto", fontSize: 10, color: "#555" }}>{dc}/{at.length}</span>
+                        <span style={{ fontSize: 10, color: "#666" }}>{area}</span>
+                        <span style={{ marginLeft: "auto", fontSize: 10, color: "#666" }}>{dc}/{at.length}</span>
                       </div>
                       <div style={{ height: 3, background: "#252018", borderRadius: 2 }}>
                         <div style={{ height: "100%", width: at.length ? `${dc / at.length * 100}%` : 0, background: color, borderRadius: 2, transition: "width .5s" }} />
@@ -308,11 +308,11 @@ export default function App() {
               <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                 {[["all","All"],["pending","Pending"],["in-progress","Active"],["done","Done"]].map(([f, l]) => (
                   <button key={f} className={`btn ${clFilter === f ? "bg" : ""}`}
-                    style={clFilter !== f ? { background: "#181714", color: "#555", border: "1px solid #222018" } : {}}
+                    style={clFilter !== f ? { background: "#f0ede8", color: "#666", border: "1px solid #ddd8cc" } : {}}
                     onClick={() => setClFilter(f)}>{l}</button>
                 ))}
               </div>
-              <span style={{ fontSize: 10, color: "#3a3830" }}>{filteredTasks.length} tasks · {fmt(filteredTasks.reduce((a, t) => a + t.elapsed, 0))} logged</span>
+              <span style={{ fontSize: 10, color: "#7a7468" }}>{filteredTasks.length} tasks · {fmt(filteredTasks.reduce((a, t) => a + t.elapsed, 0))} logged</span>
             </div>
             <div className="card">
               {filteredTasks.map((task) => {
@@ -339,7 +339,7 @@ export default function App() {
                           </span>
                         </div>
                         <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 7 }}>
-                          <span style={{ fontSize: 10, color: "#3a3830" }}>est. {task.estimatedMin}m</span>
+                          <span style={{ fontSize: 10, color: "#7a7468" }}>est. {task.estimatedMin}m</span>
                           {task.elapsed > 0 && <span style={{ fontSize: 10, color: isActive ? "#c9a96e" : "#4a4840" }}>{isActive ? "⏱ " : ""}{fmt(task.elapsed)}</span>}
                           <select className="sel" value={task.assigneeId || ""} onChange={(e) => assignTask(task.id, e.target.value)}>
                             <option value="">Unassigned</option>
@@ -354,7 +354,7 @@ export default function App() {
                         </div>
                         <input className="inp" placeholder="Add a note…" value={task.notes}
                           onChange={(e) => setNote(task.id, e.target.value)}
-                          style={{ fontSize: 11, padding: "4px 8px", background: "#111010", borderColor: "#1e1c16" }} />
+                          style={{ fontSize: 11, padding: "4px 8px", background: "#f8f7f5", borderColor: "#1e1c16" }} />
                       </div>
                       <div style={{ display: "flex", gap: 5, flexShrink: 0, marginTop: 2 }}>
                         {task.status === "pending" && <button className="btn bt" onClick={() => startTask(task.id)}>▶</button>}
@@ -374,14 +374,14 @@ export default function App() {
         {view === "schedule" && (
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14, flexWrap: "wrap", gap: 8 }}>
-              <div style={{ fontSize: 10, color: "#4a4840", letterSpacing: ".12em", textTransform: "uppercase" }}>Weekly Shift Schedule</div>
-              <div style={{ fontSize: 10, color: "#3a3830" }}>{weekDates[0].toLocaleDateString()} – {weekDates[6].toLocaleDateString()}</div>
+              <div style={{ fontSize: 10, color: "#6a6458", letterSpacing: ".12em", textTransform: "uppercase" }}>Weekly Shift Schedule</div>
+              <div style={{ fontSize: 10, color: "#7a7468" }}>{weekDates[0].toLocaleDateString()} – {weekDates[6].toLocaleDateString()}</div>
             </div>
             <div className="card" style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 560 }}>
                 <thead>
-                  <tr style={{ borderBottom: "1px solid #222018" }}>
-                    <th style={{ padding: "12px 16px", textAlign: "left", fontSize: 9, color: "#4a4840", letterSpacing: ".12em", fontWeight: 400 }}>STAFF</th>
+                  <tr style={{ borderBottom: "1px solid #ddd8cc" }}>
+                    <th style={{ padding: "12px 16px", textAlign: "left", fontSize: 9, color: "#6a6458", letterSpacing: ".12em", fontWeight: 400 }}>STAFF</th>
                     {weekDates.map((d) => (
                       <th key={dateKey(d)} style={{ padding: "10px 6px", textAlign: "center", fontWeight: 400 }}>
                         <div style={{ fontSize: 9, letterSpacing: ".1em", color: dateKey(d) === todayKey ? "#c9a96e" : "#4a4840" }}>{DAYS[d.getDay()]}</div>
@@ -392,13 +392,13 @@ export default function App() {
                 </thead>
                 <tbody>
                   {staff.map((s) => (
-                    <tr key={s.id} style={{ borderBottom: "1px solid #1a1814" }}>
+                    <tr key={s.id} style={{ borderBottom: "1px solid #e0dcd4" }}>
                       <td style={{ padding: "10px 16px" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                           <div className="av" style={{ background: s.color + "33", color: s.color }}>{s.avatar}</div>
                           <div>
-                            <div style={{ fontSize: 12, color: "#ccc" }}>{s.name}</div>
-                            <div style={{ fontSize: 9, color: "#555" }}>{s.role}</div>
+                            <div style={{ fontSize: 12, color: "#333" }}>{s.name}</div>
+                            <div style={{ fontSize: 9, color: "#666" }}>{s.role}</div>
                           </div>
                         </div>
                       </td>
@@ -435,7 +435,7 @@ export default function App() {
               </table>
             </div>
             <div style={{ marginTop: 10, display: "flex", gap: 16, flexWrap: "wrap" }}>
-              {SHIFT_ICONS.map((ic, i) => <span key={i} style={{ fontSize: 10, color: "#444" }}>{ic} {SHIFTS[i]}</span>)}
+              {SHIFT_ICONS.map((ic, i) => <span key={i} style={{ fontSize: 10, color: "#555" }}>{ic} {SHIFTS[i]}</span>)}
             </div>
           </div>
         )}
@@ -443,7 +443,7 @@ export default function App() {
         {view === "availability" && (
           <div>
             <div style={{ marginBottom: 18 }}>
-              <div style={{ fontSize: 10, color: "#4a4840", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 12 }}>Post Shift Availability</div>
+              <div style={{ fontSize: 10, color: "#6a6458", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 12 }}>Post Shift Availability</div>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 {staff.map(s => (
                   <button key={s.id}
@@ -460,11 +460,11 @@ export default function App() {
               return (
                 <>
                   <div className="card" style={{ marginBottom: 16 }}>
-                    <div style={{ padding: "12px 18px", borderBottom: "1px solid #1a1814", display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ padding: "12px 18px", borderBottom: "1px solid #e0dcd4", display: "flex", alignItems: "center", gap: 10 }}>
                       <div className="av" style={{ background: s.color + "33", color: s.color }}>{s.avatar}</div>
                       <div>
-                        <div style={{ fontSize: 13, color: "#ddd" }}>{s.name}</div>
-                        <div style={{ fontSize: 9, color: "#4a4840" }}>Tap a shift to toggle availability</div>
+                        <div style={{ fontSize: 13, color: "#1a1814" }}>{s.name}</div>
+                        <div style={{ fontSize: 9, color: "#6a6458" }}>Tap a shift to toggle availability</div>
                       </div>
                     </div>
                     {weekDates.map((d) => {
@@ -475,7 +475,7 @@ export default function App() {
                         <div key={dk} className="row" style={{ display: "flex", alignItems: "center", gap: 12, opacity: isPast ? .35 : 1, flexWrap: "wrap" }}>
                           <div style={{ width: 78, flexShrink: 0 }}>
                             <div style={{ fontSize: 12, color: isToday ? "#c9a96e" : "#bbb" }}>{DAYS[d.getDay()]}</div>
-                            <div style={{ fontSize: 9, color: "#4a4840" }}>{d.toLocaleDateString(undefined, { month: "short", day: "numeric" })}</div>
+                            <div style={{ fontSize: 9, color: "#6a6458" }}>{d.toLocaleDateString(undefined, { month: "short", day: "numeric" })}</div>
                           </div>
                           <div style={{ display: "flex", gap: 6, flexWrap: "wrap", flex: 1 }}>
                             {SHIFTS.map((shift, i) => {
@@ -497,12 +497,12 @@ export default function App() {
                     })}
                   </div>
                   <div>
-                    <div style={{ fontSize: 9, color: "#4a4840", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 10 }}>Team Availability — This Week</div>
+                    <div style={{ fontSize: 9, color: "#6a6458", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 10 }}>Team Availability — This Week</div>
                     <div className="card" style={{ overflowX: "auto" }}>
                       <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 480 }}>
                         <thead>
-                          <tr style={{ borderBottom: "1px solid #1e1c16" }}>
-                            <th style={{ padding: "10px 14px", textAlign: "left", fontSize: 9, color: "#4a4840", letterSpacing: ".12em", fontWeight: 400, whiteSpace: "nowrap" }}>STAFF</th>
+                          <tr style={{ borderBottom: "1px solid #e0dcd4" }}>
+                            <th style={{ padding: "10px 14px", textAlign: "left", fontSize: 9, color: "#6a6458", letterSpacing: ".12em", fontWeight: 400, whiteSpace: "nowrap" }}>STAFF</th>
                             {weekDates.map(d => (
                               <th key={dateKey(d)} style={{ padding: "10px 6px", textAlign: "center", fontSize: 9, color: dateKey(d) === todayKey ? "#c9a96e" : "#4a4840", fontWeight: 400 }}>
                                 {DAYS[d.getDay()]}<br />{d.getDate()}
@@ -512,7 +512,7 @@ export default function App() {
                         </thead>
                         <tbody>
                           {staff.map(sm => (
-                            <tr key={sm.id} style={{ borderBottom: "1px solid #1a1814" }}>
+                            <tr key={sm.id} style={{ borderBottom: "1px solid #e0dcd4" }}>
                               <td style={{ padding: "8px 14px" }}>
                                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                                   <div className="av" style={{ width: 20, height: 20, fontSize: 8, background: sm.color + "33", color: sm.color }}>{sm.avatar}</div>
@@ -545,7 +545,7 @@ export default function App() {
                 </>
               );
             })() : (
-              <div style={{ textAlign: "center", padding: "50px 0", fontSize: 12, color: "#2a2820" }}>
+              <div style={{ textAlign: "center", padding: "50px 0", fontSize: 12, color: "#aaa49a" }}>
                 Select a staff member above to post or view availability
               </div>
             )}
@@ -564,29 +564,29 @@ export default function App() {
               <div className="card" style={{ padding: "14px 18px", marginBottom: 12, display: "flex", gap: 8, flexWrap: "wrap", alignItems: "flex-end" }}>
                 {[["name","Item name","text",160],["unit","Unit","text",120],["quantity","Qty","number",60],["min","Min","number",60]].map(([k, ph, tp, w]) => (
                   <div key={k} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                    <label style={{ fontSize: 9, color: "#4a4840", letterSpacing: ".1em", textTransform: "uppercase" }}>{ph}</label>
+                    <label style={{ fontSize: 9, color: "#6a6458", letterSpacing: ".1em", textTransform: "uppercase" }}>{ph}</label>
                     <input className="inp" style={{ width: w }} type={tp} placeholder={ph} value={newSupply[k]}
                       onChange={e => setNewSupply(p => ({ ...p, [k]: e.target.value }))} />
                   </div>
                 ))}
                 <button className="btn bt" onClick={addSupply}>Save</button>
-                <button className="btn" style={{ background: "#181714", color: "#555", border: "1px solid #222018" }} onClick={() => setAddSupplyOpen(false)}>Cancel</button>
+                <button className="btn" style={{ background: "#f0ede8", color: "#666", border: "1px solid #ddd8cc" }} onClick={() => setAddSupplyOpen(false)}>Cancel</button>
               </div>
             )}
             <div className="card">
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 90px 120px 70px", gap: 8, padding: "8px 16px", borderBottom: "1px solid #1e1c16" }}>
-                {["Item","Min Stock","Quantity","Status"].map(h => <div key={h} style={{ fontSize: 9, color: "#3a3830", letterSpacing: ".12em", textTransform: "uppercase" }}>{h}</div>)}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 90px 120px 70px", gap: 8, padding: "8px 16px", borderBottom: "1px solid #e0dcd4" }}>
+                {["Item","Min Stock","Quantity","Status"].map(h => <div key={h} style={{ fontSize: 9, color: "#7a7468", letterSpacing: ".12em", textTransform: "uppercase" }}>{h}</div>)}
               </div>
               {supplies.map(s => {
                 const low = s.quantity <= s.min;
                 return (
                   <div key={s.id} className="row" style={{ display: "grid", gridTemplateColumns: "1fr 90px 120px 70px", alignItems: "center" }}>
                     <div style={{ fontSize: 12, color: low ? "#e0c0c0" : "#ccc" }}>{s.name}</div>
-                    <div style={{ fontSize: 11, color: "#3a3830" }}>{s.min} {s.unit}</div>
+                    <div style={{ fontSize: 11, color: "#7a7468" }}>{s.min} {s.unit}</div>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                      <button onClick={() => updateSupply(s.id, -1)} style={{ width: 24, height: 24, borderRadius: 3, background: "#1e1c16", color: "#c9a96e", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #2a2620" }}>−</button>
+                      <button onClick={() => updateSupply(s.id, -1)} style={{ width: 24, height: 24, borderRadius: 3, background: "#e8e4dc", color: "#c9a96e", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #ccc8be" }}>−</button>
                       <span style={{ fontSize: 14, color: low ? "#c07878" : "#ddd", fontWeight: 500, minWidth: 24, textAlign: "center" }}>{s.quantity}</span>
-                      <button onClick={() => updateSupply(s.id, 1)} style={{ width: 24, height: 24, borderRadius: 3, background: "#1e1c16", color: "#c9a96e", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #2a2620" }}>+</button>
+                      <button onClick={() => updateSupply(s.id, 1)} style={{ width: 24, height: 24, borderRadius: 3, background: "#e8e4dc", color: "#c9a96e", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #ccc8be" }}>+</button>
                     </div>
                     <div>
                       <span style={{ fontSize: 8, padding: "2px 7px", borderRadius: 10, background: low ? "#3a1414" : "#143a22", color: low ? "#c07878" : "#7eb87e", letterSpacing: ".1em" }}>{low ? "LOW" : "OK"}</span>
@@ -601,7 +601,7 @@ export default function App() {
         {view === "staff" && (
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-              <span style={{ fontSize: 10, color: "#4a4840" }}>{staff.length} team members</span>
+              <span style={{ fontSize: 10, color: "#6a6458" }}>{staff.length} team members</span>
               <button className="btn bg" onClick={() => setStaffModal(true)}>+ Add Staff</button>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px,1fr))", gap: 12 }}>
@@ -616,9 +616,9 @@ export default function App() {
                     <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 14 }}>
                       <div className="av" style={{ width: 42, height: 42, fontSize: 14, background: s.color + "33", color: s.color, border: `1px solid ${s.color}44` }}>{s.avatar}</div>
                       <div style={{ flex: 1 }}>
-                        <div style={{ fontSize: 14, color: "#ddd", marginBottom: 2 }}>{s.name}</div>
+                        <div style={{ fontSize: 14, color: "#1a1814", marginBottom: 2 }}>{s.name}</div>
                         <div style={{ fontSize: 10, color: s.color }}>{s.role}</div>
-                        {s.phone && <div style={{ fontSize: 10, color: "#3a3830", marginTop: 2 }}>{s.phone}</div>}
+                        {s.phone && <div style={{ fontSize: 10, color: "#7a7468", marginTop: 2 }}>{s.phone}</div>}
                       </div>
                       <button className="btn br" style={{ fontSize: 9, padding: "3px 8px" }} onClick={() => removeStaff(s.id)}>✕</button>
                     </div>
@@ -629,25 +629,25 @@ export default function App() {
                         ["Shift", todayShiftIdx !== null ? SHIFT_ICONS[todayShiftIdx] : "—"],
                         ["Avail", `${weekAvail}d`],
                       ].map(([l, v]) => (
-                        <div key={l} style={{ textAlign: "center", background: "#181714", borderRadius: 4, padding: "8px 4px" }}>
+                        <div key={l} style={{ textAlign: "center", background: "#f0ede8", borderRadius: 4, padding: "8px 4px" }}>
                           <div style={{ fontSize: 15, color: s.color, fontWeight: 500 }}>{v}</div>
-                          <div style={{ fontSize: 8, color: "#3a3830", letterSpacing: ".1em", marginTop: 2 }}>{l}</div>
+                          <div style={{ fontSize: 8, color: "#7a7468", letterSpacing: ".1em", marginTop: 2 }}>{l}</div>
                         </div>
                       ))}
                     </div>
                     {myTasks.length > 0 && (
                       <>
-                        <div style={{ fontSize: 8, color: "#3a3830", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 6 }}>Assigned Tasks</div>
+                        <div style={{ fontSize: 8, color: "#7a7468", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 6 }}>Assigned Tasks</div>
                         {myTasks.slice(0, 4).map(t => (
                           <div key={t.id} style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
                             <span style={{ fontSize: 10, color: t.status === "done" ? "#7eb8b0" : t.status === "in-progress" ? "#c9a96e" : "#3a3830" }}>
                               {t.status === "done" ? "✓" : t.status === "in-progress" ? "▶" : "○"}
                             </span>
                             <span style={{ fontSize: 10, color: t.status === "done" ? "#3a3830" : "#888", textDecoration: t.status === "done" ? "line-through" : "none" }}>{t.name}</span>
-                            {t.elapsed > 0 && <span style={{ marginLeft: "auto", fontSize: 9, color: "#3a3830" }}>{fmt(t.elapsed)}</span>}
+                            {t.elapsed > 0 && <span style={{ marginLeft: "auto", fontSize: 9, color: "#7a7468" }}>{fmt(t.elapsed)}</span>}
                           </div>
                         ))}
-                        {myTasks.length > 4 && <div style={{ fontSize: 9, color: "#3a3830", marginTop: 2 }}>+{myTasks.length - 4} more</div>}
+                        {myTasks.length > 4 && <div style={{ fontSize: 9, color: "#7a7468", marginTop: 2 }}>+{myTasks.length - 4} more</div>}
                       </>
                     )}
                   </div>
@@ -660,7 +660,7 @@ export default function App() {
         {view === "log" && (
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-              <span style={{ fontSize: 10, color: "#4a4840" }}>{log.length} entries</span>
+              <span style={{ fontSize: 10, color: "#6a6458" }}>{log.length} entries</span>
               <button className="btn br" onClick={() => setLog([])}>Clear Log</button>
             </div>
             <div className="card">
@@ -668,8 +668,8 @@ export default function App() {
                 ? <div style={{ padding: 48, textAlign: "center", fontSize: 12, color: "#222018" }}>No activity yet.</div>
                 : log.map((e, i) => (
                   <div key={i} className="row" style={{ display: "flex", gap: 16, alignItems: "baseline" }}>
-                    <span style={{ fontSize: 10, color: "#2e2c26", fontStyle: "italic", flexShrink: 0 }}>{e.time}</span>
-                    <span style={{ fontSize: 12, color: "#888" }}>{e.msg}</span>
+                    <span style={{ fontSize: 10, color: "#8a8478", fontStyle: "italic", flexShrink: 0 }}>{e.time}</span>
+                    <span style={{ fontSize: 12, color: "#555" }}>{e.msg}</span>
                   </div>
                 ))}
             </div>
@@ -684,7 +684,7 @@ export default function App() {
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, color: "#c9a96e", marginBottom: 20 }}>Add Staff Member</div>
             {[["name","Full Name","text"],["role","Role (e.g. Lead Cleaner)","text"],["phone","Phone Number","tel"]].map(([k, ph, tp]) => (
               <div key={k} style={{ marginBottom: 14 }}>
-                <div style={{ fontSize: 9, color: "#4a4840", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 5 }}>{ph}</div>
+                <div style={{ fontSize: 9, color: "#6a6458", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: 5 }}>{ph}</div>
                 <input className="inp" type={tp} placeholder={ph} value={newStaff[k]}
                   onChange={e => setNewStaff(p => ({ ...p, [k]: e.target.value }))}
                   onKeyDown={e => e.key === "Enter" && addStaff()} />
@@ -692,7 +692,7 @@ export default function App() {
             ))}
             <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
               <button className="btn bg" style={{ flex: 1, padding: "10px" }} onClick={addStaff}>Add to Team</button>
-              <button className="btn" style={{ padding: "10px 16px", background: "#181714", color: "#555", border: "1px solid #222018" }} onClick={() => setStaffModal(false)}>Cancel</button>
+              <button className="btn" style={{ padding: "10px 16px", background: "#f0ede8", color: "#666", border: "1px solid #ddd8cc" }} onClick={() => setStaffModal(false)}>Cancel</button>
             </div>
           </div>
         </div>
